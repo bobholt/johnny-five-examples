@@ -13,25 +13,23 @@ var board = new five.Board();
 board.on( 'ready', function() {
 
 	// digital pin 2 has a pushbutton attached to it. Give it a name:
-	var pushButton = 2;
+	var pushButton = new five.Button(2);
 
 	// set default buttonState of 'open'
-	var buttonState = 0;
+	var buttonState = board.firmata.LOW;
 
-	// make the pushbutton's pin an input:
-	this.pinMode( pushButton, 0 );
-
-	// firmata's digitalRead is actually an eventListener
-	// the event is emitted whenever the value changes
-	this.digitalRead( pushButton, function(value) {
+	function setButtonState() {
 
 		// set the buttonState to the current value
-		buttonState = value;
+		buttonState = this.isDown ? 1 : 0;
 
-	});
+	}
+
+	pushButton.on( 'down', setButtonState );
+	pushButton.on( 'up', setButtonState );
 
 	// the loop routine runs over and over again forever:
-	this.loop( 1, function() {
+	board.loop( 1, function() {
 
 		// print out the state of the button:
 		console.log(buttonState);
