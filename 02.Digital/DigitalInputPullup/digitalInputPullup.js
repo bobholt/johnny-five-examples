@@ -34,6 +34,7 @@ board.on( 'ready', function() {
   var sensorVal = 0;
 
   // Let's not use Button and Led instances, to prove that the pullup works
+  // without abstracting it to on() and off(), up and down
   this.pinMode( buttonPin, this.firmata.MODES.INPUT );
   this.pinMode( ledPin, this.firmata.MODES.OUTPUT );
 
