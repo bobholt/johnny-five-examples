@@ -14,19 +14,13 @@ board.on( 'ready', function() {
 
   // Pin 13 has an LED connected on most Arduino boards.
   // give it a name:
-  var led = 13;
-
-  // Set initial value to off
-	var val = 0;
-
-	// Set led pin to OUTPUT mode
-	this.pinMode( led, 1 );
+	var led = new five.Led({
+		pin: 13
+	});
 
 	// the loop routine runs over and over again forever to "flash/blink/strobe" an led
-	this.loop( 1000, function() {
-
-		this.digitalWrite( led, (val = val ? 0 : 1) );
-
+	board.loop( 1000, function() {
+		led.toggle();
 	});
 
 });
