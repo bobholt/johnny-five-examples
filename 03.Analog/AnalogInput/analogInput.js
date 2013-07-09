@@ -20,6 +20,8 @@
  Created by David Cuartielles
  modified 30 Aug 2011
  By Tom Igoe
+ ported to Johnny-Five 8 July 2013
+ by Bob Holt
  
  This example code is in the public domain.
  
