@@ -1,7 +1,7 @@
 LED on Digital IO 9
 
 Configuration Shared with:
-* 03.Analog.Fading
+* 01.Basics.Fade
 
     ______|___|___________|______
    |     3V3  5V         Vin     |

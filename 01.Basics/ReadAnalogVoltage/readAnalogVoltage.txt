@@ -2,6 +2,8 @@ Analog with Potentiometer
 
 Configuration Shared with:
 * 01.Basics.AnalogReadSerial
+* 03.Analog.AnalogInput
+* 03.Analog.Smoothing
 
 +------------------------+
 |                        |
