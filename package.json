@@ -1,24 +1,25 @@
 {
-    "name": "johnny-five-examples",
-    "version": "0.1.0",
-    "description": "Ports of Arduino examples to Johnny-Five",
-    "dependencies": {
-        "johnny-five": "0.6.x"
-    },
-    "engines": {
-        "node": ">=0.10.0"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/bobholt/johnny-five-examples.git"
-    },
-    "keywords": [
-            "arduino",
-            "johnny-five",
-            "nodebots"
-    ],
-    "author": "Bob Holt",
-    "homepage": "http://bobholt.me/",
-    "license": "MIT",
-    "readmeFilename": "README.md"
+  "name": "johnny-five-examples",
+  "version": "0.1.0",
+  "description": "Ports of Arduino examples to Johnny-Five",
+  "dependencies": {
+    "johnny-five": "0.6.x",
+    "temporal": "~0.2.6"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bobholt/johnny-five-examples.git"
+  },
+  "keywords": [
+    "arduino",
+    "johnny-five",
+    "nodebots"
+  ],
+  "author": "Bob Holt",
+  "homepage": "http://bobholt.me/",
+  "license": "MIT",
+  "readmeFilename": "README.md"
 }
