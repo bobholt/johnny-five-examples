@@ -1,3 +1,30 @@
+/*
+  Arduino Starter Kit example
+ Project 11  - Crystal Ball
+ 
+ This sketch is written to accompany Project 11 in the
+ Arduino Starter Kit
+ 
+ Parts required:
+ 220 ohm resistor
+ 10 kilohm resistor
+ 10 kilohm potentiometer
+ 16x2 LCD screen
+ tilt switch
+ 
+ 
+ Created 13 September 2012
+ by Scott Fitzgerald
+ Ported to Johnny-Five 7 August 2013
+ by Bob Holt
+ 
+ http://arduino.cc/starterKit
+ 
+ This example code is part of the public domain 
+ */
+
+// Added functionality to reset the crystal ball after 3 seconds of inactivity
+
 var five = require('johnny-five'),
     board, lcd;
 
@@ -24,15 +51,7 @@ board.on('ready', function() {
     // a variable to choose which reply from the crystal ball
     var reply = '';
 
-    // Print a message to the LCD.
-    lcd.print("Ask the");
-
-    // set the cursor to column 0, line 1
-    // line 1 is the second row, since counting begins with 0
-    lcd.setCursor(0, 1);
-
-    // print to the second line
-    lcd.print("Crystal Ball!");
+    resetCrystalBall();
 
     // Set a delay before listening for switch change, otherwise program blasts through initial phase
     board.wait( 100, function() {
@@ -83,8 +102,30 @@ board.on('ready', function() {
           lcd.print("No");
           break;
         }
+
+        board.wait( 3000, resetCrystalBall);
+
       });
     });
+
+    function resetCrystalBall() {
+
+      lcd.clear();
+      
+      // set the cursor to column 0, line 0
+      lcd.setCursor(0, 0);
+
+      // Print a message to the LCD.
+      lcd.print("Ask the");
+
+      // set the cursor to column 0, line 1
+      // line 1 is the second row, since counting begins with 0
+      lcd.setCursor(0, 1);
+
+      // print to the second line
+      lcd.print("Crystal Ball!");
+
+    }
 
     // ### `getRandomBetween`
     // Generates a random integer between two numbers
